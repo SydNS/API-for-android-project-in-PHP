@@ -4,3 +4,4 @@ CREATE TABLE `phprestcrud`.`categories` ( `id` INT NOT NULL AUTO_INCREMENT , `na
 
 ALTER TABLE `posts` ADD FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
+ALTER TABLE `categories` CHANGE `created_at` `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
