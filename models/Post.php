@@ -3,7 +3,7 @@
 
 class Post{
      private $conn;
-     private $table='post';
+     private $table="posts";
 
      public $id;
      public $category;
@@ -17,20 +17,20 @@ class Post{
 
      public function read()
      {
-         $query='SELECT
+         $query="SELECT
          c.name as category_name,
          p.id,
          p.category_id,
-         p.title,
+         p.title, 
          p.body,
          p.category_id,
          p.author,
          p.created_at
-         from '.$this->table.' p
+         from posts p
           LEFT JOIN 
-          categories c ON p.category_id=c.id
+            categories c ON p.category_id=c.id
           ORDER BY
-          p.created_at DESC';
+            p.created_at DESC";
 
           $stmt= $this->conn->prepare($query);
           $stmt->execute();
