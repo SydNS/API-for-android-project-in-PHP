@@ -107,9 +107,9 @@ class Post{
             return true;
             # code...
         }
-        printf("Error : %s  .\n",$stmt->error)
+         printf("Error : %s  .\n",$stmt->error)
           
-     }
+     } 
 
      
 
