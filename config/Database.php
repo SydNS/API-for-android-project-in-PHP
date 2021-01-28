@@ -1,10 +1,10 @@
 <?php
 class Database{
-    private $host='localhost'
-    private $db_name='phprestcrud'
-    private $username='root'
-    private $password=''
-    private $conn='localhost'
+    private $host='localhost';
+    private $db_name='phprestcrud';
+    private $username='root';
+    private $password='';
+    private $conn='localhost';
 
  public function connect()
  {
