@@ -1,4 +1,4 @@
-<?
+<?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
@@ -23,16 +23,16 @@ if ($num>0) {
             'title' => $title,
             'body' => html_entity_decode($body),
             'author' => $author,
-            'category_id' => $category_id
+            'category_id' => $category_id,
             'category_name' => $category_name  );
 
             array_push($post_arr['data'],$post_item);
     }
 
-    echo json_encode($post_arr)
+    echo json_encode($post_arr);
  
 }else{
-    echo json_encode(array('no message found'))
+    echo json_encode(array('no message found'));
  
 
 }
