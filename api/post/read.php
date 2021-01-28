@@ -32,7 +32,7 @@ if ($num>0) {
     echo json_encode($post_arr);
  
 }else{
-    echo json_encode(array('no message found'));
+    echo json_encode(array('no entries found'));
  
 
 }
