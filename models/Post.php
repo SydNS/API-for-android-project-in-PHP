@@ -1,7 +1,7 @@
 <?php
 
 
-class Post(){
+class Post{
      private $conn;
      private $table='post';
 
@@ -12,7 +12,8 @@ class Post(){
      public $author;
      public $created_at;
 
-     public function __construct($db){$this->conn=$db   }
+     public function __construct($db){
+         $this->conn=$db;   }
 
      public function read()
      {
@@ -41,3 +42,4 @@ class Post(){
 
 
 }
+?>
