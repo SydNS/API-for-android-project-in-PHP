@@ -77,17 +77,15 @@ class Post{
      }
 
 
-     public function inSert()
+     public function create()
      {
          $query="INSERT INTO posts
           
          SET
           title = :title, 
           body = :body, 
-          age = :age, 
           author = :author, 
-          category_id=category_id,
-          created_at = :created_at";
+          category_id=:category_id";
 
           
         $stmt= $this->conn->prepare($query);
@@ -97,17 +95,18 @@ class Post{
         $this->author=htmlspecialchars(strip_tags($this->author));
         $this->category_id=htmlspecialchars(strip_tags($this->category_id));
 
-        $stmt->bindParam(":title", $this->title);
-        $stmt->bindParam(":body", $this->body);
-        $stmt->bindParam(":age", $this->age);
-        $stmt->bindParam(":author", $this->author);
-        $stmt->bindParam(":category_id", $this->category_id);
+        $stmt->bindParam(':title', $this->title);
+        $stmt->bindParam(':body', $this->body);
+        $stmt->bindParam(':author', $this->author);
+        $stmt->bindParam(':category_id', $this->category_id);
         
         if ($stmt->execute()) {
             return true;
             # code...
         }
-         printf("Error : %s  .\n",$stmt->error)
+         printf("Error: ");
+
+         return false;
           
      } 
 
